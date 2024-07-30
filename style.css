@@ -1,0 +1,133 @@
+:root {
+    /* variables */
+    --box-bg-color: antiquewhite;
+    --box-border-radius: 15px;
+}
+
+/* RESETS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: "Poppins", sans-serif;
+    color: black;
+}
+body {
+    background-color: #Fbfcfa;
+}
+
+
+/* DASHBOARD */
+.grid {
+    padding: 20px;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1fr 10fr;
+    grid-template-areas: 
+    "navbar navbar"
+    "sidebar body";
+    gap:15px;
+}
+.grid > * {
+    border: 2px solid rgba(0, 0, 0, 0.376);
+    background-color: var(--box-bg-color);
+    border-radius: var(--box-border-radius);
+    -webkit-border-radius: var(--box-border-radius);
+    -moz-border-radius: var(--box-border-radius);
+    -ms-border-radius: var(--box-border-radius);
+    -o-border-radius: var(--box-border-radius);
+}
+
+
+/* NAVBAR */
+.navbar {
+    grid-area: navbar;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+/* LOGO */
+.logo {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    padding-left: 20px;
+}
+.logo img {
+    width: 30px;
+    height: 30px;
+}
+.logo span {
+    font-weight:700;
+    font-size: large;
+}
+
+
+/* LINKS */
+.links {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 20px;
+    gap:15px;
+}
+
+
+/* SIDEBAR */
+.sidebar {
+    grid-area: sidebar;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* BODY */
+.content {
+    grid-area: body;
+    padding: 25px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    align-items: center;
+    justify-items: center;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-width:thin;
+    scroll-behavior: smooth;
+
+}
+.cards {
+    background-image: url(https://picsum.photos/400);
+    background-size: cover;
+    border: 2px solid rgba(0, 0, 0, 0.313);
+    height: 300px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+.card-content {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0) 10%,rgba(0, 0, 0, 0.796));
+    color: whitesmoke;
+
+
+}
